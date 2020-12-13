@@ -1,5 +1,3 @@
-
-
 struct Passport {
     byr: Option<String>,
     iyr: Option<String>,
@@ -46,13 +44,15 @@ fn validate_passport(passport: &Passport) -> bool {
     passport.iyr.is_some() &&
     passport.eyr.is_some() &&
     passport.hgt.is_some() &&
+    passport.hcl.is_some() &&
     passport.ecl.is_some() &&
     passport.pid.is_some()
 }
 
 fn main() {
     let input = std::fs::read_to_string("input.txt").unwrap();
-    let passports: Vec<Passport> = input.trim().split("\n\n").map(parse_passport).collect();
+    let passports: Vec<Passport> = input.trim().split("\r\n\r\n").map(parse_passport).collect();
+
 
     let mut counter = 0;
     for passport in passports {
