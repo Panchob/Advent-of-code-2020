@@ -45,7 +45,7 @@ fn main() {
         ans.push(seat_id(row, col));
     }
 
-    println!("{}", ans.iter().max().unwrap());
+    println!("Part 1: {}", ans.iter().max().unwrap());
     
     let res = ans.iter().max().and_then(|max_id| {
         (1..=*max_id).find(|id_ref| {
@@ -54,6 +54,6 @@ fn main() {
         })
     }).unwrap();
 
-    println!("{}", res);
+    println!("Part 2: {}", res);
 }
 
