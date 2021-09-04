@@ -28,7 +28,7 @@ fn parse_answer_count_1(input: &str) -> i32 {
         }
     }
 
-    for (k, v) in letters.iter() {
+    for v in letters.values() {
         if *v == counter {
             ans += 1;
         }
@@ -40,10 +40,10 @@ fn parse_answer_count_1(input: &str) -> i32 {
 fn main() {
     let input = std::fs::read_to_string("input.txt").unwrap();
     let ans:i32 = input.trim().split("\r\n\r\n").map(parse_answers).sum();
-    println!("{}", ans);
+    println!("Part 1: {}", ans);
     let ans:i32 = input.trim()
                        .split("\r\n\r\n")
                        .map(parse_answer_count_1)
                        .sum();
-    println!("{}", ans);
+    println!("Part 2: {}", ans);
 }
