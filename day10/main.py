@@ -38,11 +38,11 @@ def part2(jolts):
 
 if __name__ == "__main__":
     f = open(file)
-    jolts = list(map(lambda l: int(l.rstrip()), f.readlines()))
+    jolts = [0] + list(map(lambda l: int(l.rstrip()), f.readlines()))
     jolts.sort()
     jolts.append(jolts[-1] + 3)
     part1(jolts)
-    part2([0] + jolts)
+    part2(jolts)
 
        
 
